@@ -1,0 +1,22 @@
+<template>
+    Good mroning....
+
+    
+    <template if:true={products}>
+        <template for:each={products} for:item="product">
+            <p key={product.Id}>{product.Name}</p>
+            <p key={product.Id}>{product.Product_Type__c}</p>
+            <p key={product.Id}>{product.Fees__c}</p> 
+        </template>
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="product.Id"
+                    data={data}
+                    columns={columns}>
+            </lightning-datatable>
+        </div>  
+    </template>
+    <template if:true={error}>
+        
+    </template>
+</template>
